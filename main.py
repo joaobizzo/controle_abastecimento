@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-
+path = "ABS_log.txt"
 
 while True:
     print('-='*20)
@@ -30,13 +30,13 @@ while True:
 
         nova_info = input('Digite a info de abastecimento: ')
         
-        with open('info.txt', 'a') as arquivo:
+        with open(path, 'a') as arquivo:
             arquivo.write(nova_info+'\n')
         print('Info adicionada com sucesso!')
         print('')
 
     if switch[opcao] == 'ler':
-        with open('info.txt', 'r') as arquivo:
+        with open(path, 'r') as arquivo:
             for linha in arquivo:
                 print(linha)
         print('')
