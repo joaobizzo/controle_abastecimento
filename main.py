@@ -29,12 +29,12 @@ while True:
         opcao = int(input('Digite a opção: '))
         print('')
         if opcao == 1:
-            data = input('Digite a data: ')
-            KMTotal = input('Digite o KM total: ')
-            KMrodado = input('Digite o KM rodado: ')
-            litros = input('Digite a quantidade de litros: ')
-            valorPLitro = input('Digite o valor por litro: ')
-            localizacao = input('Digite a localização: ')
+            data = str(input('Digite a data: '))
+            KMTotal = float(input('Digite o KM total: '))
+            KMrodado = float(input('Digite o KM rodado: '))
+            litros = float(input('Digite a quantidade de litros: '))
+            valorPLitro = float(input('Digite o valor por litro: '))
+            localizacao = str(input('Digite a localização: '))
             print('')
             nova_info = data+'_'+KMTotal+'_'+KMrodado+'_'+litros+'_'+valorPLitro+'_'+localizacao
             with open(path, 'a') as arquivo:
