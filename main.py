@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+import time
 
 path = "ABS_log.txt"
 
@@ -39,7 +39,7 @@ while True:
         with open(path, 'r') as arquivo:
             for linha in arquivo:
                 print(linha)
-        datetime.time.sleep(5)
+        time.sleep(5)
         print('')
     if switch[opcao] == 'sair':
         break
