@@ -24,9 +24,9 @@ while True:
 
     if switch[opcao] == 'anotar':
         
-        # data/litros/valorPorLitro
+        # data = str / KMTotal = float / KMrodado = float /litros=float/ valorPLitro= float/ localização = str
         
-        print("Formato: ddmmYYYY/xxx.xx/yy.yy/z.zz (data/KMrodado/litros/valorPLitro)")
+        print("Formato: ddmmYYYY_aaaaa.aa_xxx.xx_yy.yy_z.zz_'br-araucarias' (data_KMTotal_KMrodado_litros_valorPLitro_localização)")
 
         nova_info = input('Digite a info de abastecimento: ')
         
