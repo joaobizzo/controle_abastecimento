@@ -1,9 +1,7 @@
 import os
 import time
 
-path = "ABS_log.txt"
-
-destin_path = "data/abastecimento_log.txt"
+path = "cars/fox/abastecimento_log.txt"
 
 while True:
     print('-='*20)
@@ -63,12 +61,6 @@ while True:
         time.sleep(5)
         print('')
     if switch[opcao] == 'sair':
-        # copy log to another folder to save the project
-        with open(path, 'r') as origin_file:
-            file = origin_file.read()
-
-        with open(destin_path, 'w') as destin_file:
-            destin_file.write(file)
         break
 
 
