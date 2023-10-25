@@ -5,10 +5,15 @@ path = "cars/fox/abastecimento_log.txt"
 
 while True:
     print('-='*20)
-    print('Anotação abastecimento Fox')
+    print('Anotação abastecimento')
     print('-='*20)
     print('')
 
+    # esoclher carro desejado:
+    for carro, x in enumerate(carros) :
+        print(f"Opção {x} = {carro}")
+    carro = int(input("Digite o carro desejado:"))
+    
     print('FOX SELECIONADO')
     print('1 - Anotar info de abastecimento')
     print('2 - Ler info')

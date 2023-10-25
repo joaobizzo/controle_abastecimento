@@ -1,4 +1,4 @@
-import serial
+#import serial
 
 serial_data = 0
 
