@@ -11,5 +11,6 @@ if rpm > 700:
     print('Velocidade: ', vel)
     print('RPM: ', rpm)
     print('')
-    
+
+    # make a switch for every rotation, and then analyze the speed if is ok
 
