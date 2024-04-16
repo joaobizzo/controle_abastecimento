@@ -1,71 +1,38 @@
 import os
-import time
+from util import *
 
-path = "cars/fox/abastecimento_log.txt"
+# Ensure directory exists
+os.makedirs('./cars/fox', exist_ok=True)
 
-while True:
-    print('-='*20)
-    print('Anotação abastecimento')
-    print('-='*20)
-    print('')
+def main():
+    path = "./cars/fox/abastecimento_log.txt"
+    temp_path = "./cars/fox/temp_abastecimento_log.txt"
 
-    # esoclher carro desejado:
-    for carro, x in enumerate(carros) :
-        print(f"Opção {x} = {carro}")
-    carro = int(input("Digite o carro desejado:"))
-    
-    print('FOX SELECIONADO')
-    print('1 - Anotar info de abastecimento')
-    print('2 - Ler info')
-    print('3 - Sair')
-    opcao = int(input('Digite a opção: '))
-    print('')
-
-    switch = {
-        1: 'anotar',
-        2: 'ler',
-        3: 'sair'
-    }
-
-    if switch[opcao] == 'anotar':
-        
-        print(" 1 - Anotação fácil ")
-        print(" 2 - Anotação completa ")
-        opcao = int(input('Digite a opção: '))
+    while True:
+        print('-=' * 20)
+        print('Anotação de Abastecimento - FOX')
+        print('-=' * 20)
+        print('1 - Anotar info de abastecimento')
+        print('2 - Ler info')
+        print('3 - Processar arquivo temporário')
+        print('4 - Ordenar log por data')
+        print('5 - Sair')
+        option = int(input('Digite a opção: '))
         print('')
-        if opcao == 1:
-            data = str(input('Digite a data: '))
-            KMTotal = input('Digite o KM total: ')
-            KMrodado = input('Digite o KM rodado: ')
-            litros = input('Digite a quantidade de litros: ')
-            valorPLitro = input('Digite o valor por litro: ')
-            localizacao = str(input('Digite a localização: '))
-            print('')
-            nova_info = data+'_'+KMTotal+'_'+KMrodado+'_'+litros+'_'+valorPLitro+'_'+localizacao
-            with open(path, 'a') as arquivo:
-                arquivo.write(nova_info+'\n')
-            print('Info adicionada com sucesso!')
-            print('')
 
-        if opcao == 2:
-            # data = str / KMTotal = float / KMrodado = float /litros=float/ valorPLitro= float/ localização = str
-            
-            print("Formato: ddmmYYYY_aaaaa.aa_xxx.xx_yy.yy_z.zz_'br-araucarias' (data_KMTotal_KMrodado_litros_valorPLitro_localização)")
+        if option == 1:
+            anotar_info(path, temp_path)
+        elif option == 2:
+            ler_info(path)
+        elif option == 3:
+            processar_arquivo_temporario(temp_path, path)
+        elif option == 4:
+            ordenar_log(path)
+        elif option == 5:
+            print("Saindo do programa...")
+            break
+        else:
+            print("Opção inválida, tente novamente.")
 
-            nova_info = input('Digite a info de abastecimento: ')
-            
-            with open(path, 'a') as arquivo:
-                arquivo.write(nova_info+'\n')
-            print('Info adicionada com sucesso!')
-            print('')
-
-    if switch[opcao] == 'ler':
-        with open(path, 'r') as arquivo:
-            for linha in arquivo:
-                print(linha)
-        time.sleep(5)
-        print('')
-    if switch[opcao] == 'sair':
-        break
-
-
+if __name__ == "__main__":
+    main()
